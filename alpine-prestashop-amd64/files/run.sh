@@ -5,16 +5,15 @@
 if [ ! -d /usr/html ] ; then
   mkdir -p /usr/html
   chown -R nginx:nginx /usr/html
+  mkdir -p ~/.ssh
+  echo "${SSH_PRIVATE_KEY}" | tr -d '\r' > ~/.ssh/id_rsa
+  chmod 600 ~/.ssh/id_rsa
+  #clone repo with passwordless auth
+  git clone --depth=1 --branch=master ${REPO} /usr/html
+  rm -rf /usr/html/.git
 else
   chown -R nginx:nginx /usr/html
 fi
-
-mkdir -p ~/.ssh
-echo "${SSH_PRIVATE_KEY}" | tr -d '\r' > ~/.ssh/id_rsa
-chmod 600 ~/.ssh/id_rsa
-#clone repo with passwordless auth
-git clone --depth=1 --branch=master ${REPO} /usr/html
-rm -rf /usr/html/.git
 
 chown -R nginx:nginx /usr/html
 
