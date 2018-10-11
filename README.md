@@ -1,6 +1,6 @@
 # Prestashop Docker image running on Alpine Linux
 
-[![Docker Layers](https://img.shields.io/badge/docker%20layers-0-blue.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) [![Docker Size](https://img.shields.io/badge/docker%20size-00%20MB-blue.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-prestashop.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-prestashop.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-prestashop/)
+[![Docker Layers](https://img.shields.io/badge/docker%20layers-0-blue.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) [![Docker Size](https://img.shields.io/badge/docker%20size-49%20MB-blue.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-prestashop.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-prestashop.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-prestashop/)
 
 [![Alpine Version](https://img.shields.io/badge/alpine%20version-v3.8.1-green.svg?maxAge=2592000?style=flat-square)](http://alpinelinux.org/) [![Prestashop Version](https://img.shields.io/badge/Prestashop%20version-vlatest-green.svg?maxAge=2592000?style=flat-square)](https://www.prestashop.com/en)
 
@@ -22,7 +22,7 @@ PrestaShop is an efficient and innovative e-commerce solution with all the featu
 
 ## Features
 
-* Minimal size only ?? MB and only ? layers
+* Minimal size only 49 MB and only ? layers
 * Memory usage is minimal on a simple install
 * Memory usage is around ??mb on a simple install.
 
