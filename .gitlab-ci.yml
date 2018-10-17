@@ -39,8 +39,8 @@ arm32v7 prestashop build:
     - echo "$QUAY_PASSWORD" | docker login -u "$QUAY_USERNAME" quay.io --password-stdin && docker push $DOCKER_REGISTRY_QUAY/$DOCKER_REGISTRY_QUAY_REPO:armhf
 
 sast:
+  stage: yobasystems/alpine-docker:dind
   stage: test
-  image: yobasystems/alpine-docker:dind
   allow_failure: true
   script:
     - setup_docker
@@ -57,8 +57,8 @@ sast:
       - $SAST_DISABLED
 
 dependency_scanning:
+  stage: yobasystems/alpine-docker:dind
   stage: test
-  image: yobasystems/alpine-docker:dind
   allow_failure: true
   script:
     - setup_docker
@@ -75,8 +75,8 @@ dependency_scanning:
       - $DEPENDENCY_SCANNING_DISABLED
 
 container_scanning:
+  stage: yobasystems/alpine-docker:dind
   stage: test
-  image: yobasystems/alpine-docker:dind
   allow_failure: true
   script:
     - setup_docker
