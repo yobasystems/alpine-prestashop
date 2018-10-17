@@ -38,23 +38,6 @@ arm32v7 prestashop build:
     - echo "$QUAY_PASSWORD" | docker login -u "$QUAY_USERNAME" quay.io --password-stdin && docker push $DOCKER_REGISTRY_QUAY/$DOCKER_REGISTRY_QUAY_REPO:arm32v7
     - echo "$QUAY_PASSWORD" | docker login -u "$QUAY_USERNAME" quay.io --password-stdin && docker push $DOCKER_REGISTRY_QUAY/$DOCKER_REGISTRY_QUAY_REPO:armhf
 
-test:
-  services:
-    - postgres:latest
-  variables:
-    POSTGRES_DB: test
-  stage: test
-  image: gliderlabs/herokuish:latest
-  script:
-    - setup_test_db
-    - cp -R . /tmp/app
-    - /bin/herokuish buildpack test
-  only:
-    - branches
-  except:
-    variables:
-      - $TEST_DISABLED
-
 sast:
   stage: test
   image: yobasystems/alpine-docker:dind
