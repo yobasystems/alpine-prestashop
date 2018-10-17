@@ -55,13 +55,10 @@ test:
     variables:
       - $TEST_DISABLED
 
-
 sast:
   stage: test
-  image: docker:stable
+  image: yobasystems/alpine-docker:dind
   allow_failure: true
-  services:
-    - docker:stable-dind
   script:
     - setup_docker
     - sast
@@ -78,10 +75,8 @@ sast:
 
 dependency_scanning:
   stage: test
-  image: docker:stable
+  image: yobasystems/alpine-docker:dind
   allow_failure: true
-  services:
-    - docker:stable-dind
   script:
     - setup_docker
     - dependency_scanning
@@ -98,10 +93,8 @@ dependency_scanning:
 
 container_scanning:
   stage: test
-  image: docker:stable
+  image: yobasystems/alpine-docker:dind
   allow_failure: true
-  services:
-    - docker:stable-dind
   script:
     - setup_docker
     - container_scanning
