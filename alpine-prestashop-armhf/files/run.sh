@@ -17,7 +17,7 @@ fi
 
 chown -R nginx:nginx /usr/html
 
-sed -i "s/\/admin-dev\//\/${ADMIN_DIR}\//g" /etc/nginx/nginx.conf
+sed -i "s/admin-directory/${ADMIN_DIR}/g" /etc/nginx/nginx.conf
 
 # start php-fpm
 mkdir -p /usr/logs/php-fpm
