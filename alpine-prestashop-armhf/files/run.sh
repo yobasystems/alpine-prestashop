@@ -17,8 +17,8 @@ fi
 
 chown -R nginx:nginx /usr/html
 
-sed -i "s|admin-ps|${ADMIN_DIR}|g" /etc/nginx/nginx.conf
-sed -i "s|$admin_dir/|${ADMIN_DIR}/|g" /etc/nginx/nginx.conf
+sed -i "s,admin-ps,${ADMIN_DIR},g" /etc/nginx/nginx.conf
+# sed -i "s,$admin_dir/,${ADMIN_DIR}/,g" /etc/nginx/nginx.conf
 
 # start php-fpm
 mkdir -p /usr/logs/php-fpm
