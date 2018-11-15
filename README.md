@@ -1,6 +1,6 @@
 # Prestashop Docker image running on Alpine Linux
 
-[![Docker Layers](https://img.shields.io/badge/docker%20layers-0-blue.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) [![Docker Size](https://img.shields.io/badge/docker%20size-49%20MB-blue.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-prestashop.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-prestashop.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-prestashop/)
+[![Docker Layers](https://img.shields.io/badge/docker%20layers-16-blue.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) [![Docker Size](https://img.shields.io/badge/docker%20size-75%20MB-blue.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-prestashop.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-prestashop.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-prestashop/)
 
 [![Alpine Version](https://img.shields.io/badge/alpine%20version-v3.8.1-green.svg?maxAge=2592000?style=flat-square)](http://alpinelinux.org/) [![Prestashop Version](https://img.shields.io/badge/Prestashop%20version-vlatest-green.svg?maxAge=2592000?style=flat-square)](https://www.prestashop.com/en)
 
@@ -10,7 +10,7 @@ This Docker image [(yobasystems/alpine-prestashop)](https://hub.docker.com/r/yob
 ##### Alpine Version 3.8.1 (Released September 11, 2018)
 ##### Prestashop Version latest
 ##### PHP Version 7.2.10
-##### Nginx Version 1.14.0
+##### Nginx Version 1.14.1
 
 ----
 
@@ -22,9 +22,9 @@ PrestaShop is an efficient and innovative e-commerce solution with all the featu
 
 ## Features
 
-* Minimal size only 49 MB and only ? layers
+* Minimal size only 75 MB and only 16 layers
 * Memory usage is minimal on a simple install
-* Memory usage is around ??mb on a simple install.
+* Memory usage is around 100mb on a simple install.
 
 ## Architectures
 
