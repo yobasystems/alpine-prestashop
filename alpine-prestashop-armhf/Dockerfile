@@ -1,11 +1,11 @@
 FROM yobasystems/alpine:3.8.1-armhf
-LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="ARM32v7/armhf" alpineversion="3.8.1" build="15-nov-2018"
+LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="ARM32v7/armhf" alpineversion="3.8.1" build="15th-nov-2018"
 LABEL nginx-version="1.14.1" php-version="7.2.10" prestashop-version="latest"
 
 ENV REPO="https://github.com/PrestaShop/PrestaShop" \
     SSH_PRIVATE_KEY="" \
     URL="www.example.co.uk" \
-    ADMIN_DIR="admin-prestashop" \
+    ADMIN_DIR="admin-dev" \
     TERM="xterm" \
     DB_HOST="172.17.0.1" \
     DB_NAME="" \
