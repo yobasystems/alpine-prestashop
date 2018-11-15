@@ -5,7 +5,7 @@ LABEL nginx-version="1.14.1" php-version="7.2.10" prestashop-version="latest"
 ENV REPO="https://github.com/PrestaShop/PrestaShop" \
     SSH_PRIVATE_KEY="" \
     URL="www.example.co.uk" \
-    ADMIN_DIR="admin-test" \
+    ADMIN_DIR="admin-prestashop" \
     TERM="xterm" \
     DB_HOST="172.17.0.1" \
     DB_NAME="" \
