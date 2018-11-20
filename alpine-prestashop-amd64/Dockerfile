@@ -1,5 +1,5 @@
-FROM yobasystems/alpine:3.8.1-amd64
-LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="AMD64/x86_64" alpineversion="3.8.1" build="20-nov-2018"
+FROM yobasystems/alpine:3.7-amd64
+LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="AMD64/x86_64" alpineversion="3.7" build="20-nov-2018"
 LABEL nginx-version="1.14.1" php-version="7.2.10" prestashop-version="latest"
 
 ENV REPO="https://github.com/PrestaShop/PrestaShop" \
