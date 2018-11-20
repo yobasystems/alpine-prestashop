@@ -1,5 +1,5 @@
-FROM yobasystems/alpine:3.7-armhf
-LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="ARM32v7/armhf" alpineversion="3.7" build="20-nov-2018"
+FROM yobasystems/alpine:3.8.1-armhf
+LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="ARM32v7/armhf" alpineversion="3.8.1" build="20-nov-2018"
 LABEL nginx-version="1.14.1" php-version="7.2.10" prestashop-version="latest"
 
 ENV REPO="https://github.com/PrestaShop/PrestaShop" \
