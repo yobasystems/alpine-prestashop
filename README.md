@@ -145,6 +145,10 @@ prestashop:
   image: yobasystems/alpine-prestashop
   environment:
     VIRTUAL_HOST: example.co.uk
+    MYSQL_DATABASE: prestadb
+    MYSQL_PASSWORD: prestapass
+    MYSQL_ROOT_PASSWORD: ''
+    MYSQL_USER: prestauser
   expose:
     - "80"
   volumes:
