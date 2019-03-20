@@ -4,7 +4,7 @@ stages:
   - manifest
   - deploy
 
-amd64 mariadb build:
+amd64 prestashop build:
   image: yobasystems/alpine-docker:amd64-dind
   stage: build
   tags:
@@ -26,7 +26,7 @@ amd64 mariadb build:
     - echo "$QUAY_PASSWORD" | docker login -u "$QUAY_USERNAME" quay.io --password-stdin && docker push $DOCKER_REGISTRY_QUAY/$DOCKER_REGISTRY_QUAY_REPO:x86_64
     - docker push ${CI_APPLICATION_REPOSITORY}:${CI_APPLICATION_TAG}
 
-arm32v7 mariadb build:
+arm32v7 prestashop build:
   image: yobasystems/alpine-docker:armhf-dind
   stage: build
   tags:
@@ -47,7 +47,7 @@ arm32v7 mariadb build:
     - echo "$QUAY_PASSWORD" | docker login -u "$QUAY_USERNAME" quay.io --password-stdin && docker push $DOCKER_REGISTRY_QUAY/$DOCKER_REGISTRY_QUAY_REPO:arm32v7
     - echo "$QUAY_PASSWORD" | docker login -u "$QUAY_USERNAME" quay.io --password-stdin && docker push $DOCKER_REGISTRY_QUAY/$DOCKER_REGISTRY_QUAY_REPO:armhf
 
-arm64v8 mariadb build:
+arm64v8 prestashop build:
   image: yobasystems/alpine-docker:aarch64-dind
   stage: build
   tags:
