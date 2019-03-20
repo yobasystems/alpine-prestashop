@@ -1,16 +1,19 @@
 # Prestashop Docker image running on Alpine Linux
 
-[![Docker Layers](https://img.shields.io/badge/docker%20layers-16-blue.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) [![Docker Size](https://img.shields.io/badge/docker%20size-75%20MB-blue.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-prestashop.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-prestashop.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/yobasystems/alpine-prestashop/)
+[![Docker Automated build](https://img.shields.io/docker/automated/yobasystems/alpine-prestashop.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-prestashop/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-prestashop.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-prestashop/)
+[![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-prestashop.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-prestashop/)
 
-[![Alpine Version](https://img.shields.io/badge/alpine%20version-v3.8.1-green.svg?maxAge=2592000?style=flat-square)](http://alpinelinux.org/) [![Prestashop Version](https://img.shields.io/badge/Prestashop%20version-vlatest-green.svg?maxAge=2592000?style=flat-square)](https://www.prestashop.com/en)
+[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.9.0-green.svg?style=for-the-badge)](https://alpinelinux.org/)
+[![Prestashop Version](https://img.shields.io/badge/Prestashop%20version-latest-green.svg?style=for-the-badge)](https://www.prestashop.com/en)
 
 
-This Docker image [(yobasystems/alpine-prestashop)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) is based on the minimal [Alpine Linux](http://alpinelinux.org/) ready for running [Prestashop](https://www.prestashop.com/en). (Requires external database)
+This Docker image [(yobasystems/alpine-prestashop)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) ready for running [Prestashop](https://www.prestashop.com/en). (Requires external database)
 
-##### Alpine Version 3.8.1 (Released September 11, 2018)
+##### Alpine Version 3.9.0 (Released January 29, 2019)
 ##### Prestashop Version latest
-##### PHP Version 7.2.10
-##### Nginx Version 1.14.1
+##### PHP Version 7.2.14
+##### Nginx Version 1.14.2
 
 ----
 
@@ -24,23 +27,37 @@ PrestaShop is an efficient and innovative e-commerce solution with all the featu
 
 * Minimal size only 75 MB and only 16 layers
 * Memory usage is minimal on a simple install
-* Memory usage is around 100mb on a simple install.
 
 ## Architectures
 
-* ```:amd64```, ```:latest``` - 64 bit Intel/AMD (x86_64/amd64)
-* ```:i386```, ```:x86``` - 32 bit Intel/AMD (x86/i686)
+* ```:amd64```, ```:x86_64``` - 64 bit Intel/AMD (x86_64/amd64)
 * ```:arm64v8```, ```:aarch64``` - 64 bit ARM (ARMv8/aarch64)
 * ```:arm32v7```, ```:armhf``` - 32 bit ARM (ARMv7/armhf)
 
-#### PLEASE CHECK TAGS BELOW FOR SUPPORTED ARCHITECTURES, THE ABOVE IS A LIST OF EXPLANATION
+##### PLEASE CHECK TAGS BELOW FOR SUPPORTED ARCHITECTURES, THE ABOVE IS A LIST OF EXPLANATION
 
 ## Tags
 
-* ```:latest```, ```:amd64``` latest branch based on amd64
+* ```:latest``` latest branch based (Automatic Architecture Selection)
 * ```:master``` master branch usually inline with latest
-* ```:v0.0.0``` version number related to docker version
-* ```:armhf```, ```:arm32v7``` Armv7 based on latest tag but arm architecture
+* ```:amd64```, ```:x86_64```  amd64 based on latest tag but amd64 architecture
+* ```:aarch64```, ```:arm64v8``` Armv8 based on latest tag but arm64 architecture
+* ```:armhf```, ```:arm32v7``` Armv7 based on latest tag but arm32 architecture
+
+## Layers & Sizes
+
+![Version](https://img.shields.io/badge/version-amd64-blue.svg?style=for-the-badge)
+![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/yobasystems/alpine-prestashop/amd64.svg?style=for-the-badge)
+![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/yobasystems/alpine-prestashop/amd64.svg?style=for-the-badge)
+
+![Version](https://img.shields.io/badge/version-aarch64-blue.svg?style=for-the-badge)
+![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/yobasystems/alpine-prestashop/aarch64.svg?style=for-the-badge)
+![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/yobasystems/alpine-prestashop/aarch64.svg?style=for-the-badge)
+
+![Version](https://img.shields.io/badge/version-armhf-blue.svg?style=for-the-badge)
+![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/yobasystems/alpine-prestashop/armhf.svg?style=for-the-badge)
+![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/yobasystems/alpine-prestashop/armhf.svg?style=for-the-badge)
+
 
 ## Creating an instance
 

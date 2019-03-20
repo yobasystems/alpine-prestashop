@@ -1,6 +1,23 @@
-FROM yobasystems/alpine:3.8.1-armhf
-LABEL maintainer "Dominic Taylor <dominic@yobasystems.co.uk>" architecture="ARM32v7/armhf" alpineversion="3.8.1" build="26-nov-2018"
-LABEL nginx-version="1.14.1" php-version="7.2.10" prestashop-version="latest"
+FROM yobasystems/alpine:3.9.2-armhf
+
+ARG BUILD_DATE
+ARG VCS_REF
+
+LABEL maintainer="Dominic Taylor <dominic@yobasystems.co.uk>" \
+    architecture="arm32v7/armhf" \
+    nginx-version="1.14.2" \
+    php-version="7.2.14" \
+    alpine-version="3.9.2" \
+    build="20-Mar-2019" \
+    org.opencontainers.image.title="alpine-prestashop" \
+    org.opencontainers.image.description="Prestashop Docker image running on Alpine Linux" \
+    org.opencontainers.image.authors="Dominic Taylor <dominic@yobasystems.co.uk>" \
+    org.opencontainers.image.vendor="Yoba Systems" \
+    org.opencontainers.image.version="v3.9.2" \
+    org.opencontainers.image.url="https://hub.docker.com/r/yobasystems/alpine-prestashop/" \
+    org.opencontainers.image.source="https://github.com/yobasystems/alpine-prestashop" \
+    org.opencontainers.image.revision=$VCS_REF \
+    org.opencontainers.image.created=$BUILD_DATE
 
 ENV REPO="https://github.com/PrestaShop/PrestaShop" \
     SSH_PRIVATE_KEY="" \
