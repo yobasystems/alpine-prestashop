@@ -43,7 +43,11 @@ else
   echo "\n* Pretashop already installed...";
 fi
 
+echo "[i] Changing admin directory..."
 sed -i "s|admin/|${PS_FOLDER_ADMIN}/|g" /etc/nginx/nginx.conf
+
+echo "[i] Changing server name..."
+sed -i "s|www.example.co.uk|${URL}/|g" /etc/nginx/nginx.conf
 
 chown -R nginx:nginx /usr/html
 
