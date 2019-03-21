@@ -41,7 +41,7 @@ RUN apk update && \
     php7-pdo_mysql php7-mysqli php7-session \
     php7-gd php7-iconv php7-mcrypt php7-gmp php7-zip \
     php7-curl php7-opcache php7-ctype php7-apcu php7-memcached \
-    php7-intl php7-bcmath php7-dom php7-mbstring php7-simplexml php7-soap php7-xmlreader mysql-client curl && apk add -u musl && \
+    php7-intl php7-bcmath php7-dom php7-mbstring php7-simplexml php7-soap php7-tokenizer php7-xmlreader mysql-client curl && apk add -u musl && \
     rm -rf /var/cache/apk/*
 
 RUN sed -i "s/nginx:x:100:101:nginx:\/var\/lib\/nginx:\/sbin\/nologin/nginx:x:100:101:nginx:\/usr:\/bin\/bash/g" /etc/passwd && \
