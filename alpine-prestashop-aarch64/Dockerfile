@@ -27,10 +27,11 @@ ENV REPO="https://github.com/PrestaShop/PrestaShop" \
     PS_INSTALL_AUTO="0" \
     PS_ERASE_DB="0" \
     PS_INSTALL_GIT="0" \
+    CLOUDFLARE_CDN="0" \
     TERM="xterm" \
     MYSQL_HOST="172.17.0.1" \
     MYSQL_DATABASE="" \
-    MYSQL_USER=""\
+    MYSQL_USER="" \
     MYSQL_PASSWORD=""
 
 RUN apk update && \
