@@ -29,7 +29,7 @@ if [ "$PS_INSTALL_AUTO" = "1" ]; then
 		mv /usr/html/admin /usr/html/$PS_FOLDER_ADMIN/
 	fi
 else
-  echo "\n* Pretashop already installed...";
+  echo "[i] Pretashop already installed...";
 fi
 
 if [ "$PS_INSTALL_GIT" = "1" ]; then
@@ -40,7 +40,7 @@ if [ "$PS_INSTALL_GIT" = "1" ]; then
   git clone --depth=1 --branch=master ${REPO} /usr/html
   rm -rf /usr/html/.git
 else
-  echo "\n* Pretashop already installed...";
+  echo "[i] Pretashop already installed...";
 fi
 
 echo "[i] Changing admin directory..."
@@ -55,6 +55,8 @@ if [ "$CLOUDFLARE_CDN" = "1" ]; then
 else
   echo "[i] Not behind Cloudflare..."
 fi
+
+echo "[i] Fixing permissions & ownership..."
 
 find /usr/html/ -type f -exec chmod 644 {} \; && find /usr/html/ -type d -exec chmod 755 {} \;
 chown -R nginx:nginx /usr/html
