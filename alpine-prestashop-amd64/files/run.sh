@@ -56,6 +56,7 @@ else
   echo "[i] Not behind Cloudflare..."
 fi
 
+find /usr/html/ -type f -exec chmod 644 {} \; && find /usr/html/ -type d -exec chmod 755 {} \;
 chown -R nginx:nginx /usr/html
 
 echo "[i] Starting Prestashop..."
