@@ -12,7 +12,7 @@ This Docker image [(yobasystems/alpine-prestashop)](https://hub.docker.com/r/yob
 
 ##### Alpine Version 3.9.2 (Released March 04, 2019)
 ##### Prestashop Version latest
-##### PHP Version 7.2.14
+##### PHP Version 7.2.17
 ##### Nginx Version 1.14.2
 
 ----

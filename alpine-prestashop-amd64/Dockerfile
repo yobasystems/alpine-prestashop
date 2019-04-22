@@ -6,9 +6,9 @@ ARG VCS_REF
 LABEL maintainer="Dominic Taylor <dominic@yobasystems.co.uk>" \
     architecture="amd64/x86_64" \
     nginx-version="1.14.2" \
-    php-version="7.2.14" \
+    php-version="7.2.17" \
     alpine-version="3.9.2" \
-    build="26-Mar-2019" \
+    build="22-Apr-2019" \
     org.opencontainers.image.title="alpine-prestashop" \
     org.opencontainers.image.description="Prestashop Docker image running on Alpine Linux" \
     org.opencontainers.image.authors="Dominic Taylor <dominic@yobasystems.co.uk>" \
@@ -35,7 +35,7 @@ ENV REPO="https://github.com/PrestaShop/PrestaShop" \
     MYSQL_PASSWORD=""
 
 RUN apk update && \
-    apk add bash less vim nginx ca-certificates git tzdata zip \
+    apk add bash less vim geoip nginx nginx-mod-http-headers-more nginx-mod-http-geoip nginx-mod-stream nginx-mod-stream-geoip ca-certificates git tzdata zip \
     libmcrypt-dev zlib-dev gmp-dev \
     freetype-dev libjpeg-turbo-dev libpng-dev \
     php7-fpm php7-json php7-zlib php7-xml php7-pdo php7-phar php7-openssl php7-fileinfo php7-imagick \

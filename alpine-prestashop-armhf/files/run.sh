@@ -52,7 +52,7 @@ sed -i "s|www.example.co.uk|${URL}|g" /etc/nginx/nginx.conf
 if [ "$CLOUDFLARE_CDN" = "1" ]; then
   echo "[i] Changing Real IP settings..."
   sed -i "s|#real_ip_header X-Forwarded-For;|real_ip_header X-Forwarded-For;|g" /etc/nginx/nginx.conf
-  sed -i "s|$http_x_real_ip|$X-Forwarded-For|g" /etc/nginx/nginx.conf
+  sed -i "s|access_log stdout specialLog|access_log stdout cloudflare|g" /etc/nginx/nginx.conf
 else
   echo "[i] Not behind Cloudflare..."
 fi
