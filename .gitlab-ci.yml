@@ -72,7 +72,7 @@ arm64v8 prestashop build:
     - echo "$QUAY_PASSWORD" | docker login -u "$QUAY_USERNAME" quay.io --password-stdin && docker push $DOCKER_REGISTRY_QUAY/$DOCKER_REGISTRY_QUAY_REPO:aarch64
 
 gitlab manifest creation:
-  stage: yobasystems/alpine-docker:dind
+  image: yobasystems/alpine-docker:dind
   stage: manifest
   tags:
     - amd64
@@ -90,7 +90,7 @@ gitlab manifest creation:
     - docker manifest push $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:latest
 
 dockerhub manifest creation:
-  stage: yobasystems/alpine-docker:dind
+  image: yobasystems/alpine-docker:dind
   stage: manifest
   tags:
     - amd64
