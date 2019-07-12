@@ -39,11 +39,11 @@ RUN apk update && \
     libmcrypt-dev zlib-dev gmp-dev freetype-dev libjpeg-turbo-dev libpng-dev mysql-client curl
 
 RUN apk add --repository http://dl-cdn.alpinelinux.org/alpine/v3.9/main \
-    php7-fpm php7-json php7-zlib php7-xml php7-pdo php7-phar php7-openssl php7-fileinfo php7-imagick \
-    php7-pdo_mysql php7-mysqli php7-session \
-    php7-gd php7-iconv php7-mcrypt php7-gmp php7-zip \
-    php7-curl php7-opcache php7-ctype php7-apcu php7-memcached \
-    php7-intl php7-bcmath php7-dom php7-mbstring php7-simplexml php7-soap php7-tokenizer php7-xmlreader && apk add -u musl && \
+    php7-fpm~=7.2 php7-json~=7.2 php7-zlib~=7.2 php7-xml~=7.2 php7-pdo~=7.2 php7-phar~=7.2 php7-openssl~=7.2 php7-fileinfo~=7.2 php7-imagick~=7.2 \
+    php7-pdo_mysql~=7.2 php7-mysqli~=7.2 php7-session~=7.2 \
+    php7-gd~=7.2 php7-iconv~=7.2 php7-mcrypt~=7.2 php7-gmp~=7.2 php7-zip~=7.2 \
+    php7-curl~=7.2 php7-opcache~=7.2 php7-ctype~=7.2 php7-apcu~=7.2 php7-memcached~=7.2 \
+    php7-intl~=7.2 php7-bcmath~=7.2 php7-dom~=7.2 php7-mbstring~=7.2 php7-simplexml~=7.2 php7-soap~=7.2 php7-tokenizer~=7.2 php7-xmlreader~=7.2 && apk add -u musl && \
     rm -rf /var/cache/apk/*
 
 RUN sed -i "s/nginx:x:100:101:nginx:\/var\/lib\/nginx:\/sbin\/nologin/nginx:x:100:101:nginx:\/usr:\/bin\/bash/g" /etc/passwd && \
