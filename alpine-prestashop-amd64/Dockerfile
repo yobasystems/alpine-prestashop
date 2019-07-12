@@ -1,19 +1,19 @@
-FROM yobasystems/alpine:3.9.4-amd64
+FROM yobasystems/alpine:3.10.0-amd64
 
 ARG BUILD_DATE
 ARG VCS_REF
 
 LABEL maintainer="Dominic Taylor <dominic@yobasystems.co.uk>" \
     architecture="amd64/x86_64" \
-    nginx-version="1.14.2" \
-    php-version="7.2.18" \
-    alpine-version="3.9.4" \
-    build="24-May-2019" \
+    nginx-version="1.16.0" \
+    php-version="7.2.19" \
+    alpine-version="3.10.0" \
+    build="12-Jul-2019" \
     org.opencontainers.image.title="alpine-prestashop" \
     org.opencontainers.image.description="Prestashop Docker image running on Alpine Linux" \
     org.opencontainers.image.authors="Dominic Taylor <dominic@yobasystems.co.uk>" \
     org.opencontainers.image.vendor="Yoba Systems" \
-    org.opencontainers.image.version="v3.9.4" \
+    org.opencontainers.image.version="v3.10.0" \
     org.opencontainers.image.url="https://hub.docker.com/r/yobasystems/alpine-prestashop/" \
     org.opencontainers.image.source="https://github.com/yobasystems/alpine-prestashop" \
     org.opencontainers.image.revision=$VCS_REF \
@@ -36,13 +36,14 @@ ENV REPO="https://github.com/PrestaShop/PrestaShop" \
 
 RUN apk update && \
     apk add bash less vim geoip nginx nginx-mod-http-headers-more nginx-mod-http-geoip nginx-mod-stream nginx-mod-stream-geoip ca-certificates git tzdata zip \
-    libmcrypt-dev zlib-dev gmp-dev \
-    freetype-dev libjpeg-turbo-dev libpng-dev \
+    libmcrypt-dev zlib-dev gmp-dev freetype-dev libjpeg-turbo-dev libpng-dev mysql-client curl
+
+RUN apk add --repository http://dl-cdn.alpinelinux.org/alpine/v3.9/main \
     php7-fpm php7-json php7-zlib php7-xml php7-pdo php7-phar php7-openssl php7-fileinfo php7-imagick \
     php7-pdo_mysql php7-mysqli php7-session \
     php7-gd php7-iconv php7-mcrypt php7-gmp php7-zip \
     php7-curl php7-opcache php7-ctype php7-apcu php7-memcached \
-    php7-intl php7-bcmath php7-dom php7-mbstring php7-simplexml php7-soap php7-tokenizer php7-xmlreader mysql-client curl && apk add -u musl && \
+    php7-intl php7-bcmath php7-dom php7-mbstring php7-simplexml php7-soap php7-tokenizer php7-xmlreader && apk add -u musl && \
     rm -rf /var/cache/apk/*
 
 RUN sed -i "s/nginx:x:100:101:nginx:\/var\/lib\/nginx:\/sbin\/nologin/nginx:x:100:101:nginx:\/usr:\/bin\/bash/g" /etc/passwd && \
