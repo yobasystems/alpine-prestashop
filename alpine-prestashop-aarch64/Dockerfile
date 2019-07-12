@@ -39,7 +39,7 @@ RUN apk update && \
     libmcrypt-dev zlib-dev gmp-dev freetype-dev libjpeg-turbo-dev libpng-dev mysql-client curl
 
 RUN apk add --repository http://dl-cdn.alpinelinux.org/alpine/v3.9/main \
-    php7-fpm~=7.2.19 php7-json~=7.2.19 php7-zlib~=7.2.19 php7-xml~=7.2.19 php7-pdo~=7.2.19 php7-phar~=7.2.19 php7-openssl~=7.2.19 php7-fileinfo~=7.2.19 php7-imagick~=7.2.19 \
+    php7-common~=7.2.19 php7-fpm~=7.2.19 php7-json~=7.2.19 php7-zlib~=7.2.19 php7-xml~=7.2.19 php7-pdo~=7.2.19 php7-phar~=7.2.19 php7-openssl~=7.2.19 php7-fileinfo~=7.2.19 php7-imagick~=7.2.19 \
     php7-pdo_mysql~=7.2.19 php7-mysqli~=7.2.19 php7-session~=7.2.19 \
     php7-gd~=7.2.19 php7-iconv~=7.2.19 php7-mcrypt~=7.2.19 php7-gmp~=7.2.19 php7-zip~=7.2.19 \
     php7-curl~=7.2.19 php7-opcache~=7.2.19 php7-ctype~=7.2.19 php7-apcu~=7.2.19 php7-memcached~=7.2.19 \
