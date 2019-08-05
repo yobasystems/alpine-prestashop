@@ -8,7 +8,7 @@ LABEL maintainer="Dominic Taylor <dominic@yobasystems.co.uk>" \
     nginx-version="1.16.0" \
     php-version="7.2.19" \
     alpine-version="3.10.0" \
-    build="12-Jul-2019" \
+    build="05-Aug-2019" \
     org.opencontainers.image.title="alpine-prestashop" \
     org.opencontainers.image.description="Prestashop Docker image running on Alpine Linux" \
     org.opencontainers.image.authors="Dominic Taylor <dominic@yobasystems.co.uk>" \
@@ -38,12 +38,12 @@ RUN apk update && \
     apk add bash less vim geoip nginx nginx-mod-http-headers-more nginx-mod-http-geoip nginx-mod-stream nginx-mod-stream-geoip ca-certificates git tzdata zip \
     libmcrypt-dev zlib-dev gmp-dev freetype-dev libjpeg-turbo-dev libpng-dev mysql-client curl
 
-RUN apk add --repository http://dl-cdn.alpinelinux.org/alpine/v3.9/main 'php7-common<7.2.19-r0' && \
-    'php7-fpm<7.2.19-r0' 'php7-json<7.2.19-r0' 'php7-zlib<7.2.19-r0' 'php7-xml<7.2.19-r0' 'php7-pdo<7.2.19-r0' 'php7-phar<7.2.19-r0' 'php7-openssl<7.2.19-r0' 'php7-fileinfo<7.2.19-r0' 'php7-imagick<7.2.19-r0' \
-    'php7-pdo_mysql<7.2.19-r0' 'php7-mysqli<7.2.19-r0' 'php7-session<7.2.19-r0' \
-    'php7-gd<7.2.19-r0' 'php7-iconv<7.2.19-r0' 'php7-mcrypt<7.2.19-r0' 'php7-gmp<7.2.19-r0' 'php7-zip<7.2.19-r0' \
-    'php7-curl<7.2.19-r0' 'php7-opcache<7.2.19-r0' 'php7-ctype<7.2.19-r0' 'php7-apcu<7.2.19-r0' 'php7-memcached<7.2.19-r0' \
-    'php7-intl<7.2.19-r0' 'php7-bcmath<7.2.19-r0' 'php7-dom<7.2.19-r0' 'php7-mbstring<7.2.19-r0' 'php7-simplexml<7.2.19-r0' 'php7-soap<7.2.19-r0' 'php7-tokenizer<7.2.19-r0' 'php7-xmlreader<7.2.19-r0' && apk add -u musl && \
+RUN echo "@3.9 http://dl-cdn.alpinelinux.org/alpine/v3.9/main" >> /etc/apk/repositories && apk update && \
+    apk add php7-common@3.9 php7-fpm@3.9 php7-json@3.9 php7-zlib@3.9 php7-xml@3.9 php7-pdo@3.9 php7-phar@3.9 php7-openssl@3.9 php7-fileinfo@3.9 php7-imagick@3.9 \
+    php7-pdo_mysql@3.9 php7-mysqli@3.9 php7-session@3.9 \
+    php7-gd@3.9 php7-iconv@3.9 php7-mcrypt@3.9 php7-gmp@3.9 php7-zip@3.9 \
+    php7-curl@3.9 php7-opcache@3.9 php7-ctype@3.9 php7-apcu@3.9 php7-memcached@3.9 \
+    php7-intl@3.9 php7-bcmath@3.9 php7-dom@3.9 php7-mbstring@3.9 php7-simplexml@3.9 php7-soap@3.9 php7-tokenizer@3.9 php7-xmlreader@3.9 && apk add -u musl && \
     rm -rf /var/cache/apk/*
 
 RUN sed -i "s/nginx:x:100:101:nginx:\/var\/lib\/nginx:\/sbin\/nologin/nginx:x:100:101:nginx:\/usr:\/bin\/bash/g" /etc/passwd && \
