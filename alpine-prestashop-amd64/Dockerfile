@@ -35,7 +35,7 @@ ENV REPO="https://github.com/PrestaShop/PrestaShop" \
     MYSQL_PASSWORD=""
 
 RUN apk update && \
-    apk add bash less vim geoip nginx nginx-mod-http-headers-more nginx-mod-http-geoip nginx-mod-stream nginx-mod-stream-geoip ca-certificates git tzdata zip \
+    apk --no-cache add bash less vim geoip nginx nginx-mod-http-headers-more nginx-mod-http-geoip nginx-mod-stream nginx-mod-stream-geoip ca-certificates git tzdata zip \
     libmcrypt-dev zlib-dev gmp-dev freetype-dev libjpeg-turbo-dev libpng-dev mysql-client curl \
     php7-common php7-fpm php7-json php7-zlib php7-xml php7-pdo php7-phar php7-openssl php7-fileinfo php7-imagick \
     php7-pdo_mysql php7-mysqli php7-session \
