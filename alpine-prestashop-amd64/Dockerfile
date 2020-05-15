@@ -1,4 +1,4 @@
-FROM yobasystems/alpine:3.9.4-amd64
+FROM yobasystems/alpine:3.9.6-amd64
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -6,14 +6,14 @@ ARG VCS_REF
 LABEL maintainer="Dominic Taylor <dominic@yobasystems.co.uk>" \
     architecture="amd64/x86_64" \
     nginx-version="1.14.2" \
-    php-version="7.2.26" \
-    alpine-version="3.9.4" \
-    build="16-Jan-2020" \
+    php-version="7.2.27" \
+    alpine-version="3.9.6" \
+    build="15-May-2020" \
     org.opencontainers.image.title="alpine-prestashop" \
     org.opencontainers.image.description="Prestashop Docker image running on Alpine Linux" \
     org.opencontainers.image.authors="Dominic Taylor <dominic@yobasystems.co.uk>" \
     org.opencontainers.image.vendor="Yoba Systems" \
-    org.opencontainers.image.version="v3.9.4" \
+    org.opencontainers.image.version="v3.9.6" \
     org.opencontainers.image.url="https://hub.docker.com/r/yobasystems/alpine-prestashop/" \
     org.opencontainers.image.source="https://github.com/yobasystems/alpine-prestashop" \
     org.opencontainers.image.revision=$VCS_REF \
