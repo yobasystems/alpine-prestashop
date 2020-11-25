@@ -12,7 +12,7 @@ else
 fi
 
 if [ "$PS_INSTALL_AUTO" = "1" ]; then
-  wget "https://github.com/PrestaShop/PrestaShop/releases/download/1.7.6.8/prestashop_1.7.6.8.zip" -O /tmp/prestashop.zip
+  wget "https://github.com/PrestaShop/PrestaShop/releases/download/1.7.6.9/prestashop_1.7.6.9.zip" -O /tmp/prestashop.zip
   unzip -n -q /tmp/prestashop.zip -d /tmp/prestashop/
   rm -rf /tmp/prestashop.zip
   unzip -n -q /tmp/prestashop/prestashop.zip -d /usr/html/
@@ -55,6 +55,17 @@ if [ "$CLOUDFLARE_CDN" = "1" ]; then
   sed -i "s|access_log stdout specialLog|access_log stdout cloudflare|g" /etc/nginx/nginx.conf
 else
   echo "[i] Not behind Cloudflare..."
+fi
+
+if [ "$DEV_MODE" = "1" ]; then
+  echo "[i] Changing settings to Dev Mode..."
+  sed -i "s|fastcgi_read_timeout 60s;|fastcgi_read_timeout 600s;|g" /etc/nginx/nginx.conf
+  sed -i "s|fastcgi_send_timeout 60s;|fastcgi_send_timeout 600s;|g" /etc/nginx/nginx.conf
+  sed -i "s|max_execution_time = 300|max_execution_time = 600|g" /etc/php7/php.ini
+  sed -i "s|max_input_time = 300|max_input_time = 600|g" /etc/php7/php.ini
+  sed -i "s|pm.process_idle_timeout = 30s|pm.process_idle_timeout = 600s|g" /etc/php7/php-fpm.conf
+else
+  echo "[i] Not in Dev Mode, Production Mode..."
 fi
 
 echo "[i] Fixing permissions & ownership..."
