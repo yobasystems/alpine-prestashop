@@ -12,6 +12,7 @@ else
 fi
 
 if [ "$PS_INSTALL_AUTO" = "1" ]; then
+  echo "[i] Installing Prestashop...";
   wget "https://github.com/PrestaShop/PrestaShop/releases/download/1.7.7.8/prestashop_1.7.7.8.zip" -O /tmp/prestashop.zip
   unzip -n -q /tmp/prestashop.zip -d /tmp/prestashop/
   rm -rf /tmp/prestashop.zip
@@ -33,6 +34,7 @@ else
 fi
 
 if [ "$PS_INSTALL_GIT" = "1" ]; then
+  echo "[i] Cloning Prestashop repo...";
   mkdir -p ~/.ssh
   echo "${SSH_PRIVATE_KEY}" | tr -d '\r' > ~/.ssh/id_rsa
   chmod 600 ~/.ssh/id_rsa
@@ -50,7 +52,7 @@ echo "[i] Changing server name..."
 sed -i "s|www.example.co.uk|${URL}|g" /etc/nginx/nginx.conf
 
 if [ "$CLOUDFLARE_CDN" = "1" ]; then
-  echo "[i] Changing Real IP settings..."
+  echo "[i] Behind Cloudflare Changing Real IP settings..."
   sed -i "s|#real_ip_header CF-Connecting-IP;|real_ip_header CF-Connecting-IP;|g" /etc/nginx/nginx.conf
   sed -i "s|access_log stdout specialLog|access_log stdout cloudflare|g" /etc/nginx/nginx.conf
 else
