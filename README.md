@@ -4,16 +4,16 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-prestashop.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-prestashop/)
 [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-prestashop.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-prestashop/)
 
-[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.12.12-green.svg?style=for-the-badge)](https://alpinelinux.org/)
-[![Prestashop Version](https://img.shields.io/badge/Prestashop%20version-v1.7.7.8-green.svg?style=for-the-badge)](https://www.prestashop.com/en)
+[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.15.4-green.svg?style=for-the-badge)](https://alpinelinux.org/)
+[![Prestashop Version](https://img.shields.io/badge/Prestashop%20version-v1.7.8.6-green.svg?style=for-the-badge)](https://www.prestashop.com/en)
 
 
 This Docker image [(yobasystems/alpine-prestashop)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) ready for running [Prestashop](https://www.prestashop.com/en). (Requires external database)
 
-### Alpine Version 3.12.12 (Released 2022-04-04)
+### Alpine Version 3.15.4 (Released 2022-04-04)
 ##### Prestashop Version 1.7.7.8
-##### PHP Version 7.3.33
-##### Nginx Version 1.18.0
+##### PHP Version 7.4.30
+##### Nginx Version 1.20.2
 
 ----
 
