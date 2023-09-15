@@ -10,7 +10,7 @@
 
 This Docker image [(yobasystems/alpine-prestashop)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) ready for running [Prestashop](https://www.prestashop.com/en). (Requires external database)
 
-### Alpine Version 3.15.10 (Released 2023-03-29)
+### Alpine Version 3.15.10 (Released 2023-08-07)
 ##### Prestashop Version 1.7.8.10
 ##### PHP Version 7.4.33
 ##### Nginx Version 1.20.2
@@ -47,16 +47,16 @@ PrestaShop is an efficient and innovative e-commerce solution with all the featu
 ## Layers & Sizes
 
 ![Version](https://img.shields.io/badge/version-amd64-blue.svg?style=for-the-badge)
-![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/yobasystems/alpine-prestashop/amd64.svg?style=for-the-badge)
-![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/yobasystems/alpine-prestashop/amd64.svg?style=for-the-badge)
+![MicroBadger Layers (tag)](https://img.shields.io/docker/layers/yobasystems/alpine-prestashop/amd64.svg?style=for-the-badge)
+![MicroBadger Size (tag)](https://img.shields.io/docker/image-size/yobasystems/alpine-prestashop/amd64.svg?style=for-the-badge)
 
 ![Version](https://img.shields.io/badge/version-aarch64-blue.svg?style=for-the-badge)
-![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/yobasystems/alpine-prestashop/aarch64.svg?style=for-the-badge)
-![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/yobasystems/alpine-prestashop/aarch64.svg?style=for-the-badge)
+![MicroBadger Layers (tag)](https://img.shields.io/docker/layers/yobasystems/alpine-prestashop/aarch64.svg?style=for-the-badge)
+![MicroBadger Size (tag)](https://img.shields.io/docker/image-size/yobasystems/alpine-prestashop/aarch64.svg?style=for-the-badge)
 
 ![Version](https://img.shields.io/badge/version-armhf-blue.svg?style=for-the-badge)
-![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/yobasystems/alpine-prestashop/armhf.svg?style=for-the-badge)
-![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/yobasystems/alpine-prestashop/armhf.svg?style=for-the-badge)
+![MicroBadger Layers (tag)](https://img.shields.io/docker/layers/yobasystems/alpine-prestashop/armhf.svg?style=for-the-badge)
+![MicroBadger Size (tag)](https://img.shields.io/docker/image-size/yobasystems/alpine-prestashop/armhf.svg?style=for-the-badge)
 
 
 ## Creating an instance
