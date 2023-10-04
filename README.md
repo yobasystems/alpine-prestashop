@@ -4,16 +4,16 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-prestashop.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-prestashop/)
 [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-prestashop.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-prestashop/)
 
-[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.15.10-green.svg?style=for-the-badge)](https://alpinelinux.org/)
-[![Prestashop Version](https://img.shields.io/badge/Prestashop%20version-v1.7.8.10-green.svg?style=for-the-badge)](https://www.prestashop.com/en)
+[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.18.4-green.svg?style=for-the-badge)](https://alpinelinux.org/)
+[![Prestashop Version](https://img.shields.io/badge/Prestashop%20version-v8.1.1-green.svg?style=for-the-badge)](https://www.prestashop.com/en)
 
 
 This Docker image [(yobasystems/alpine-prestashop)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) ready for running [Prestashop](https://www.prestashop.com/en). (Requires external database)
 
-### Alpine Version 3.15.10 (Released 2023-08-07)
-##### Prestashop Version 1.7.8.10
-##### PHP Version 7.4.33
-##### Nginx Version 1.20.2
+### Alpine Version 3.18.4 (Released 2023-09-28)
+##### Prestashop Version 8.1.1
+##### PHP Version 8.1.23
+##### Nginx Version 1.24.0
 
 ----
 
@@ -85,74 +85,74 @@ docker restart <image_name>
 Example:
 
 ```
-docker exec <image_id> apk add php7-soap
+docker exec <image_id> apk add php81-soap
 docker restart <image_name>
 ```
 
 ```
-php7-common
-php7-pdo_sqlite
-php7-pear
-php7-ftp
-php7-imap
-php7-mysqli
-php7-json
-php7-mbstring
-php7-soap
-php7-litespeed
-php7-sockets
-php7-bcmath
-php7-opcache
-php7-dom
-php7-zlib
-php7-gettext
-php7-fpm
-php7-intl
-php7-openssl
-php7-session
-php7-mcrypt
-php7-pdo_mysql
-php7-embed
-php7-xmlrpc
-php7-wddx
-php7-dba
-php7-ldap
-php7-xsl
-php7-exif
-php7-pdo_dblib
-php7-bz2
-php7-pdo
-php7-pspell
-php7-sysvmsg
-php7-gmp
-php7-apache2
-php7-pdo_odbc
-php7-shmop
-php7-ctype
-php7-phpdbg
-php7-enchant
-php7-sysvsem
-php7-sqlite3
-php7-odbc
-php7-pcntl
-php7-calendar
-php7-xmlreader
-php7-snmp
-php7-zip
-php7-posix
-php7-iconv
-php7-curl
-php7-doc
-php7-gd
-php7-xml
-php7-dev
-php7-cgi
-php7-sysvshm
-php7-pgsql
-php7-tidy
-php7-pdo_pgsql
-php7-phar
-php7-mysqlnd
+php81-common
+php81-pdo_sqlite
+php81-pear
+php81-ftp
+php81-imap
+php81-mysqli
+php81-json
+php81-mbstring
+php81-soap
+php81-litespeed
+php81-sockets
+php81-bcmath
+php81-opcache
+php81-dom
+php81-zlib
+php81-gettext
+php81-fpm
+php81-intl
+php81-openssl
+php81-session
+php81-mcrypt
+php81-pdo_mysql
+php81-embed
+php81-xmlrpc
+php81-wddx
+php81-dba
+php81-ldap
+php81-xsl
+php81-exif
+php81-pdo_dblib
+php81-bz2
+php81-pdo
+php81-pspell
+php81-sysvmsg
+php81-gmp
+php81-apache2
+php81-pdo_odbc
+php81-shmop
+php81-ctype
+php81-phpdbg
+php81-enchant
+php81-sysvsem
+php81-sqlite3
+php81-odbc
+php81-pcntl
+php81-calendar
+php81-xmlreader
+php81-snmp
+php81-zip
+php81-posix
+php81-iconv
+php81-curl
+php81-doc
+php81-gd
+php81-xml
+php81-dev
+php81-cgi
+php81-sysvshm
+php81-pgsql
+php81-tidy
+php81-pdo_pgsql
+php81-phar
+php81-mysqlnd
 ```
 
 ## Docker Compose example:

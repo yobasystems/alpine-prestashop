@@ -1,19 +1,19 @@
-FROM yobasystems/alpine:3.15.10-amd64
+FROM yobasystems/alpine:3.18.4-amd64
 
 ARG BUILD_DATE
 ARG VCS_REF
 
-LABEL maintainer="Dominic Taylor <dominic@yobasystems.co.uk>" \
+LABEL maintainer="Dominic Taylor <dominic@yoba.systems>" \
     architecture="amd64/x86_64" \
-    nginx-version="1.20.2" \
-    php-version="7.4.33" \
-    alpine-version="3.15.10" \
-    build="15-Sep-2023" \
+    nginx-version="1.24.0" \
+    php-version="8.1.23" \
+    alpine-version="3.18.4" \
+    build="04-Oct-2023" \
     org.opencontainers.image.title="alpine-prestashop" \
     org.opencontainers.image.description="Prestashop Docker image running on Alpine Linux" \
-    org.opencontainers.image.authors="Dominic Taylor <dominic@yobasystems.co.uk>" \
+    org.opencontainers.image.authors="Dominic Taylor <dominic@yoba.systems>" \
     org.opencontainers.image.vendor="Yoba Systems" \
-    org.opencontainers.image.version="v3.15.10" \
+    org.opencontainers.image.version="v3.18.4" \
     org.opencontainers.image.url="https://hub.docker.com/r/yobasystems/alpine-prestashop/" \
     org.opencontainers.image.source="https://github.com/yobasystems/alpine-prestashop" \
     org.opencontainers.image.revision=$VCS_REF \
@@ -38,20 +38,20 @@ ENV REPO="https://github.com/PrestaShop/PrestaShop" \
 RUN apk update && \
     apk --no-cache add bash less vim geoip nginx nginx-mod-http-headers-more nginx-mod-http-geoip nginx-mod-stream nginx-mod-stream-geoip ca-certificates git tzdata zip \
     libmcrypt-dev zlib-dev gmp-dev freetype-dev libjpeg-turbo-dev libpng-dev mysql-client curl \
-    php7-common php7-fpm php7-json php7-zlib php7-xml php7-pdo php7-phar php7-openssl php7-fileinfo php7-imagick \
-    php7-pdo_mysql php7-mysqli php7-session \
-    php7-gd php7-iconv php7-mcrypt php7-gmp php7-zip \
-    php7-curl php7-opcache php7-ctype php7-apcu php7-memcached \
-    php7-intl php7-bcmath php7-dom php7-mbstring php7-simplexml php7-soap php7-tokenizer php7-xmlreader && apk add -u musl && \
+    php81-common php81-fpm php81-json php81-zlib php81-xml php81-pdo php81-phar php81-openssl php81-fileinfo \
+    php81-pdo_mysql php81-mysqli php81-session \
+    php81-gd php81-iconv php81-gmp php81-zip \
+    php81-curl php81-opcache php81-ctype php81-apcu \
+    php81-intl php81-bcmath php81-dom php81-mbstring php81-simplexml php81-soap php81-tokenizer php81-xmlreader php81-pecl-imagick php81-pecl-memcached && apk add -u musl && \
     rm -rf /var/cache/apk/*
 
 RUN sed -i "s/nginx:x:100:101:nginx:\/var\/lib\/nginx:\/sbin\/nologin/nginx:x:100:101:nginx:\/usr:\/bin\/bash/g" /etc/passwd && \
     sed -i "s/nginx:x:100:101:nginx:\/var\/lib\/nginx:\/sbin\/nologin/nginx:x:100:101:nginx:\/usr:\/bin\/bash/g" /etc/passwd- && \
-    ln -s /sbin/php-fpm7 /sbin/php-fpm
+    ln -s /sbin/php-fpm81 /sbin/php-fpm
 
 ADD files/nginx.conf /etc/nginx/
-ADD files/php-fpm.conf /etc/php7/
-ADD files/php.ini /etc/php7/
+ADD files/php-fpm.conf /etc/php81/
+ADD files/php.ini /etc/php81/
 
 ADD files/run.sh /
 RUN chmod +x /run.sh
