@@ -13,7 +13,7 @@ fi
 
 if [ "$PS_INSTALL_AUTO" = "1" ]; then
   echo "[i] Installing Prestashop...";
-  wget "https://github.com/PrestaShop/PrestaShop/releases/download/1.7.8.10/prestashop_1.7.8.10.zip" -O /tmp/prestashop.zip
+  wget "https://github.com/PrestaShop/PrestaShop/releases/download/8.1.1/prestashop_8.1.1.zip" -O /tmp/prestashop.zip
   unzip -n -q /tmp/prestashop.zip -d /tmp/prestashop/
   rm -rf /tmp/prestashop.zip
   unzip -n -q /tmp/prestashop/prestashop.zip -d /usr/html/
@@ -63,9 +63,9 @@ if [ "$DEV_MODE" = "1" ]; then
   echo "[i] Changing settings to Dev Mode..."
   sed -i "s|fastcgi_read_timeout 60s;|fastcgi_read_timeout 600s;|g" /etc/nginx/nginx.conf
   sed -i "s|fastcgi_send_timeout 60s;|fastcgi_send_timeout 600s;|g" /etc/nginx/nginx.conf
-  sed -i "s|max_execution_time = 300|max_execution_time = 600|g" /etc/php7/php.ini
-  sed -i "s|max_input_time = 300|max_input_time = 600|g" /etc/php7/php.ini
-  sed -i "s|pm.process_idle_timeout = 30s|pm.process_idle_timeout = 600s|g" /etc/php7/php-fpm.conf
+  sed -i "s|max_execution_time = 300|max_execution_time = 600|g" /etc/php81/php.ini
+  sed -i "s|max_input_time = 300|max_input_time = 600|g" /etc/php81/php.ini
+  sed -i "s|pm.process_idle_timeout = 30s|pm.process_idle_timeout = 600s|g" /etc/php81/php-fpm.conf
 else
   echo "[i] Not in Dev Mode, Production Mode..."
 fi
@@ -79,7 +79,7 @@ echo "[i] Starting Prestashop..."
 
 # start php-fpm
 mkdir -p /usr/logs/php-fpm
-php-fpm7
+php-fpm81
 
 # start nginx
 mkdir -p /usr/logs/nginx
