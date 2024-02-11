@@ -15,7 +15,8 @@ LABEL maintainer="Dominic Taylor <dominic@yoba.systems>" \
     org.opencontainers.image.vendor="Yoba Systems" \
     org.opencontainers.image.version="v3.19.0" \
     org.opencontainers.image.url="https://hub.docker.com/r/yobasystems/alpine-prestashop/" \
-    org.opencontainers.image.source="https://github.com/yobasystems/alpine" \
+    org.opencontainers.image.source="https://github.com/yobasystems/alpine-prestashop" \
+    org.opencontainers.image.base.name="docker.io/yobasystems/alpine:3.19.0" \
     org.opencontainers.image.revision=$VCS_REF \
     org.opencontainers.image.created=$BUILD_DATE
 
