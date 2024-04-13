@@ -5,20 +5,20 @@
 [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-prestashop.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-prestashop/)
 
 [![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.19.1-green.svg?style=for-the-badge)](https://alpinelinux.org/)
-[![Prestashop Version](https://img.shields.io/badge/Prestashop%20version-v8.1.3-green.svg?style=for-the-badge)](https://www.prestashop.com/en)
+[![Prestashop Version](https://img.shields.io/badge/Prestashop%20version-v8.1.5-green.svg?style=for-the-badge)](https://www.prestashop.com/en)
 
 
-This Docker image [(yobasystems/alpine-prestashop)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) ready for running [Prestashop](https://www.prestashop.com/en). (Requires external database)
+This Container image [(yobasystems/alpine-prestashop)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) ready for running [Prestashop](https://www.prestashop.com/en). (Requires external database)
 
 ### Alpine Version 3.19.1 (Released 2023-01-26)
-##### Prestashop Version 8.1.3
-##### PHP Version 8.1.27
+##### Prestashop Version 8.1.5
+##### PHP Version 8.1.28
 ##### Nginx Version 1.24.0
 
 ----
 
 ## What is Alpine Linux?
-Alpine Linux is a Linux distribution built around musl libc and BusyBox. The image is only 5 MB in size and has access to a package repository that is much more complete than other BusyBox based images. This makes Alpine Linux a great image base for utilities and even production applications. Read more about Alpine Linux here and you can see how their mantra fits in right at home with Docker images.
+Alpine Linux is a Linux distribution built around musl libc and BusyBox. The image is only 5 MB in size and has access to a package repository that is much more complete than other BusyBox based images. This makes Alpine Linux a great image base for utilities and even production applications. Read more about Alpine Linux here and you can see how their mantra fits in right at home with Container images.
 
 ## What is Prestashop?
 PrestaShop is an efficient and innovative e-commerce solution with all the features you need to create an online store and grow your business.

@@ -6,9 +6,9 @@ ARG VCS_REF
 LABEL maintainer="Dominic Taylor <dominic@yoba.systems>" \
     architecture="arm32v7/armhf" \
     nginx-version="1.24.0" \
-    php-version="8.1.27" \
+    php-version="8.1.28" \
     alpine-version="3.19.1" \
-    build="11-Feb-2024" \
+    build="13-Apr-2024" \
     org.opencontainers.image.title="alpine-prestashop" \
     org.opencontainers.image.description="Prestashop container image running on Alpine Linux" \
     org.opencontainers.image.authors="Dominic Taylor <dominic@yoba.systems>" \

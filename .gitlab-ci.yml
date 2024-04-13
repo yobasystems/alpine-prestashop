@@ -120,15 +120,15 @@ gitlab manifest creation:
   - docker manifest annotate $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:latest $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:arm64v8
     --os linux --arch arm64
   - docker manifest push $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:latest
-  - docker manifest create $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:v8.1.3 $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:amd64
+  - docker manifest create $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:v8.1.5 $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:amd64
     $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:arm32v7 $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:arm64v8
-  - docker manifest annotate $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:v8.1.3 $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:amd64
+  - docker manifest annotate $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:v8.1.5 $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:amd64
     --os linux --arch amd64
-  - docker manifest annotate $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:v8.1.3 $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:arm32v7
+  - docker manifest annotate $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:v8.1.5 $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:arm32v7
     --os linux --arch arm --variant v7
-  - docker manifest annotate $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:v8.1.3 $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:arm64v8
+  - docker manifest annotate $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:v8.1.5 $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:arm64v8
     --os linux --arch arm64 --variant v8
-  - docker manifest push $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:v8.1.3
+  - docker manifest push $DOCKER_REGISTRY/$DOCKER_REGISTRY_REPO:v8.1.5
 dockerhub manifest creation:
   image: yobasystems/alpine-docker:dind
   stage: manifest
@@ -150,14 +150,14 @@ dockerhub manifest creation:
   - docker manifest annotate $DOCKER_REGISTRY_DOCKERHUB_REPO:latest $DOCKER_REGISTRY_DOCKERHUB_REPO:arm64v8
     --os linux --arch arm64
   - docker manifest push $DOCKER_REGISTRY_DOCKERHUB_REPO:latest
-  - docker manifest create $DOCKER_REGISTRY_DOCKERHUB_REPO:v8.1.3 $DOCKER_REGISTRY_DOCKERHUB_REPO:amd64
+  - docker manifest create $DOCKER_REGISTRY_DOCKERHUB_REPO:v8.1.5 $DOCKER_REGISTRY_DOCKERHUB_REPO:amd64
     $DOCKER_REGISTRY_DOCKERHUB_REPO:arm32v7 $DOCKER_REGISTRY_DOCKERHUB_REPO:arm64v8
-  - docker manifest annotate $DOCKER_REGISTRY_DOCKERHUB_REPO:v8.1.3 $DOCKER_REGISTRY_DOCKERHUB_REPO:amd64
+  - docker manifest annotate $DOCKER_REGISTRY_DOCKERHUB_REPO:v8.1.5 $DOCKER_REGISTRY_DOCKERHUB_REPO:amd64
     --os linux --arch amd64
-  - docker manifest annotate $DOCKER_REGISTRY_DOCKERHUB_REPO:v8.1.3 $DOCKER_REGISTRY_DOCKERHUB_REPO:arm32v7
+  - docker manifest annotate $DOCKER_REGISTRY_DOCKERHUB_REPO:v8.1.5 $DOCKER_REGISTRY_DOCKERHUB_REPO:arm32v7
     --os linux --arch arm --variant v7
-  - docker manifest annotate $DOCKER_REGISTRY_DOCKERHUB_REPO:v8.1.3 $DOCKER_REGISTRY_DOCKERHUB_REPO:arm64v8
+  - docker manifest annotate $DOCKER_REGISTRY_DOCKERHUB_REPO:v8.1.5 $DOCKER_REGISTRY_DOCKERHUB_REPO:arm64v8
     --os linux --arch arm64 --variant v8
-  - docker manifest push $DOCKER_REGISTRY_DOCKERHUB_REPO:v8.1.3
+  - docker manifest push $DOCKER_REGISTRY_DOCKERHUB_REPO:v8.1.5
 sast:
   stage: test
