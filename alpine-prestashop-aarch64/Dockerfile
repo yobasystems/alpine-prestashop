@@ -38,12 +38,18 @@ ENV REPO="https://github.com/PrestaShop/PrestaShop" \
 
 RUN apk update && \
     apk --no-cache add bash less vim geoip nginx nginx-mod-http-headers-more nginx-mod-http-geoip nginx-mod-stream nginx-mod-stream-geoip ca-certificates git tzdata zip \
-    libmcrypt-dev zlib-dev gmp-dev freetype-dev libjpeg-turbo-dev libpng-dev mysql-client curl \
+    libmcrypt-dev zlib-dev gmp-dev freetype-dev libjpeg-turbo-dev libpng-dev mysql-client curl musl
+
+RUN apk --no-cache \
+    --repository=https://dl-cdn.alpinelinux.org/alpine/v3.19/community \
+    --repository=https://dl-cdn.alpinelinux.org/alpine/v3.19/main \
+    add \
+    icu-libs \
     php81-common php81-fpm php81-json php81-zlib php81-xml php81-pdo php81-phar php81-openssl php81-fileinfo \
     php81-pdo_mysql php81-mysqli php81-session \
     php81-gd php81-iconv php81-gmp php81-zip \
     php81-curl php81-opcache php81-ctype php81-apcu \
-    php81-intl php81-bcmath php81-dom php81-mbstring php81-simplexml php81-soap php81-tokenizer php81-xmlreader php81-pecl-imagick php81-pecl-memcached && apk add -u musl && \
+    php81-intl php81-bcmath php81-dom php81-mbstring php81-simplexml php81-soap php81-tokenizer php81-xmlreader php81-pecl-imagick php81-pecl-memcached \
     rm -rf /var/cache/apk/*
 
 RUN sed -i "s/nginx:x:100:101:nginx:\/var\/lib\/nginx:\/sbin\/nologin/nginx:x:100:101:nginx:\/usr:\/bin\/bash/g" /etc/passwd && \
