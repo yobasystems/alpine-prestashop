@@ -6,7 +6,7 @@ ARG VCS_REF
 LABEL maintainer="Dominic Taylor <dominic@yoba.systems>" \
     architecture="arm32v7/armhf" \
     nginx-version="1.26.2" \
-    php-version="8.1.30" \
+    php-version="7.4.33" \
     alpine-version="3.20.3" \
     build="10-Nov-2024" \
     org.opencontainers.image.title="alpine-prestashop" \
@@ -41,24 +41,24 @@ RUN apk update && \
     libmcrypt-dev zlib-dev gmp-dev freetype-dev libjpeg-turbo-dev libpng-dev mysql-client curl musl
 
 RUN apk --no-cache \
-    --repository=https://dl-cdn.alpinelinux.org/alpine/v3.19/community \
-    --repository=https://dl-cdn.alpinelinux.org/alpine/v3.19/main \
+    --repository=https://dl-cdn.alpinelinux.org/alpine/v3.15/community \
+    --repository=https://dl-cdn.alpinelinux.org/alpine/v3.15/main \
     add \
     icu-libs \
-    php81-common php81-fpm php81-json php81-zlib php81-xml php81-pdo php81-phar php81-openssl php81-fileinfo \
-    php81-pdo_mysql php81-mysqli php81-session \
-    php81-gd php81-iconv php81-gmp php81-zip \
-    php81-curl php81-opcache php81-ctype php81-apcu \
-    php81-intl php81-bcmath php81-dom php81-mbstring php81-simplexml php81-soap php81-tokenizer php81-xmlreader php81-pecl-imagick php81-pecl-memcached \
+    php7-common php7-fpm php7-json php7-zlib php7-xml php7-pdo php7-phar php7-openssl php7-fileinfo \
+    php7-pdo_mysql php7-mysqli php7-session \
+    php7-gd php7-iconv php7-gmp php7-zip \
+    php7-curl php7-opcache php7-ctype php7-apcu \
+    php7-intl php7-bcmath php7-dom php7-mbstring php7-simplexml php7-soap php7-tokenizer php7-xmlreader php7-pecl-imagick php7-pecl-memcached \
     rm -rf /var/cache/apk/*
 
 RUN sed -i "s/nginx:x:100:101:nginx:\/var\/lib\/nginx:\/sbin\/nologin/nginx:x:100:101:nginx:\/usr:\/bin\/bash/g" /etc/passwd && \
     sed -i "s/nginx:x:100:101:nginx:\/var\/lib\/nginx:\/sbin\/nologin/nginx:x:100:101:nginx:\/usr:\/bin\/bash/g" /etc/passwd- && \
-    ln -s /sbin/php-fpm81 /sbin/php-fpm
+    ln -s /sbin/php-fpm7 /sbin/php-fpm
 
 ADD files/nginx.conf /etc/nginx/
-ADD files/php-fpm.conf /etc/php81/
-ADD files/php.ini /etc/php81/
+ADD files/php-fpm.conf /etc/php7/
+ADD files/php.ini /etc/php7/
 
 ADD files/run.sh /
 RUN chmod +x /run.sh
