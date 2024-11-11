@@ -61,11 +61,11 @@ fi
 
 if [ "$DEV_MODE" = "1" ]; then
   echo "[i] Changing settings to Dev Mode..."
-  sed -i "s|fastcgi_read_timeout 60s;|fastcgi_read_timeout 600s;|g" /etc/nginx/nginx.conf
-  sed -i "s|fastcgi_send_timeout 60s;|fastcgi_send_timeout 600s;|g" /etc/nginx/nginx.conf
+  sed -i "s|fastcgi_read_timeout 180s;|fastcgi_read_timeout 600s;|g" /etc/nginx/nginx.conf
+  sed -i "s|fastcgi_send_timeout 180s;|fastcgi_send_timeout 600s;|g" /etc/nginx/nginx.conf
   sed -i "s|max_execution_time = 300|max_execution_time = 600|g" /etc/php7/php.ini
   sed -i "s|max_input_time = 300|max_input_time = 600|g" /etc/php7/php.ini
-  sed -i "s|pm.process_idle_timeout = 30s|pm.process_idle_timeout = 600s|g" /etc/php7/php-fpm.conf
+  sed -i "s|pm.process_idle_timeout = 180s|pm.process_idle_timeout = 600s|g" /etc/php7/php-fpm.conf
 else
   echo "[i] Not in Dev Mode, Production Mode..."
 fi
