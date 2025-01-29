@@ -4,15 +4,15 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-prestashop.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-prestashop/)
 [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-prestashop.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-prestashop/)
 
-[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.20.3-green.svg?style=for-the-badge)](https://alpinelinux.org/)
+[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.21.1-green.svg?style=for-the-badge)](https://alpinelinux.org/)
 [![Prestashop Version](https://img.shields.io/badge/Prestashop%20version-v8.2.0-green.svg?style=for-the-badge)](https://www.prestashop.com/en)
 
 
 This Container image [(yobasystems/alpine-prestashop)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) ready for running [Prestashop](https://www.prestashop.com/en). (Requires external database)
 
-### Alpine Version 3.20.3 (Released 2024-09-06)
+### Alpine Version 3.21.1 (Released 2025-01-06)
 ##### Prestashop Version 8.2.0
-##### PHP Version 8.1.30
+##### PHP Version 8.1.31
 ##### Nginx Version 1.26.2
 
 ----
@@ -39,7 +39,7 @@ PrestaShop is an efficient and innovative e-commerce solution with all the featu
 ## Tags
 
 * ```:latest``` latest branch based (Automatic Architecture Selection)
-* ```:master``` master branch usually inline with latest
+* ```:main``` main branch usually inline with latest
 * ```:amd64```, ```:x86_64```  amd64 based on latest tag but amd64 architecture
 * ```:aarch64```, ```:arm64v8``` Armv8 based on latest tag but arm64 architecture
 * ```:armhf```, ```:arm32v7``` Armv7 based on latest tag but arm32 architecture
