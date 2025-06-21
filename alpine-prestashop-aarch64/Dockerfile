@@ -1,22 +1,22 @@
-FROM yobasystems/alpine:3.21.2-aarch64
+FROM yobasystems/alpine:3.22.0-aarch64
 
 ARG BUILD_DATE
 ARG VCS_REF
 
 LABEL maintainer="Dominic Taylor <dominic@yoba.systems>" \
     architecture="arm64v8/aarch64" \
-    nginx-version="1.26.2" \
-    php-version="8.1.31" \
-    alpine-version="3.21.2" \
-    build="31-Jan-2025" \
+    nginx-version="1.28.0" \
+    php-version="8.1.32" \
+    alpine-version="3.22.0" \
+    build="21-Jun-2025" \
     org.opencontainers.image.title="alpine-prestashop" \
     org.opencontainers.image.description="Prestashop container image running on Alpine Linux" \
     org.opencontainers.image.authors="Dominic Taylor <dominic@yoba.systems>" \
     org.opencontainers.image.vendor="Yoba Systems" \
-    org.opencontainers.image.version="3.21.2" \
+    org.opencontainers.image.version="3.22.0" \
     org.opencontainers.image.url="https://hub.docker.com/r/yobasystems/alpine-prestashop/" \
     org.opencontainers.image.source="https://github.com/yobasystems/alpine-prestashop" \
-    org.opencontainers.image.base.name="docker.io/yobasystems/alpine:3.21.2" \
+    org.opencontainers.image.base.name="docker.io/yobasystems/alpine:3.22.0" \
     org.opencontainers.image.revision=$VCS_REF \
     org.opencontainers.image.created=$BUILD_DATE
 
