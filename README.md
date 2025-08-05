@@ -10,7 +10,7 @@
 
 This Container image [(yobasystems/alpine-prestashop)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) ready for running [Prestashop](https://www.prestashop.com/en). (Requires external database)
 
-### Alpine Version 3.22.1 (Released 2025-01-06)
+### Alpine Version 3.22.1 (Released 2025-07-15)
 ##### Prestashop Version 8.2.2
 ##### PHP Version 8.1.32
 ##### Nginx Version 1.28.0
