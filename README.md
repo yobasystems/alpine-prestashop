@@ -5,13 +5,13 @@
 [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-prestashop.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-prestashop/)
 
 [![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.22.1-green.svg?style=for-the-badge)](https://alpinelinux.org/)
-[![Prestashop Version](https://img.shields.io/badge/Prestashop%20version-v8.2.1-green.svg?style=for-the-badge)](https://www.prestashop.com/en)
+[![Prestashop Version](https://img.shields.io/badge/Prestashop%20version-v8.2.2-green.svg?style=for-the-badge)](https://www.prestashop.com/en)
 
 
 This Container image [(yobasystems/alpine-prestashop)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) ready for running [Prestashop](https://www.prestashop.com/en). (Requires external database)
 
 ### Alpine Version 3.22.1 (Released 2025-01-06)
-##### Prestashop Version 8.2.1
+##### Prestashop Version 8.2.2
 ##### PHP Version 8.1.32
 ##### Nginx Version 1.28.0
 

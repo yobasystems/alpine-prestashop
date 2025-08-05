@@ -13,7 +13,7 @@ fi
 
 if [ "$PS_INSTALL_AUTO" = "1" ]; then
   echo "[i] Installing Prestashop...";
-  wget "https://github.com/PrestaShop/PrestaShop/releases/download/8.2.1/prestashop_8.2.1.zip" -O /tmp/prestashop.zip
+  wget "https://github.com/PrestaShop/PrestaShop/releases/download/8.2.2/prestashop_8.2.2.zip" -O /tmp/prestashop.zip
   unzip -n -q /tmp/prestashop.zip -d /tmp/prestashop/
   rm -rf /tmp/prestashop.zip
   unzip -n -q /tmp/prestashop/prestashop.zip -d /usr/html/
