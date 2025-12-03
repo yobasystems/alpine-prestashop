@@ -4,13 +4,13 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-prestashop.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-prestashop/)
 [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-prestashop.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-prestashop/)
 
-[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.22.1-green.svg?style=for-the-badge)](https://alpinelinux.org/)
+[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.22.2-green.svg?style=for-the-badge)](https://alpinelinux.org/)
 [![Prestashop Version](https://img.shields.io/badge/Prestashop%20version-v8.2.2-green.svg?style=for-the-badge)](https://www.prestashop.com/en)
 
 
 This Container image [(yobasystems/alpine-prestashop)](https://hub.docker.com/r/yobasystems/alpine-prestashop/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) ready for running [Prestashop](https://www.prestashop.com/en). (Requires external database)
 
-### Alpine Version 3.22.1 (Released 2025-07-15)
+### Alpine Version 3.22.2 (Released 2025-10-08)
 ##### Prestashop Version 8.2.2
 ##### PHP Version 8.1.32
 ##### Nginx Version 1.28.0
@@ -47,15 +47,12 @@ PrestaShop is an efficient and innovative e-commerce solution with all the featu
 ## 📏 Layers & Sizes
 
 ![Version](https://img.shields.io/badge/version-amd64-blue.svg?style=for-the-badge)
-![Docker Image Version (tag)](https://img.shields.io/docker/v/yobasystems/alpine-prestashop/amd64.svg?style=for-the-badge)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yobasystems/alpine-prestashop/amd64.svg?style=for-the-badge)
 
 ![Version](https://img.shields.io/badge/version-aarch64-blue.svg?style=for-the-badge)
-![Docker Image Version (tag)](https://img.shields.io/docker/v/yobasystems/alpine-prestashop/aarch64.svg?style=for-the-badge)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yobasystems/alpine-prestashop/aarch64.svg?style=for-the-badge)
 
 ![Version](https://img.shields.io/badge/version-armhf-blue.svg?style=for-the-badge)
-![Docker Image Version (tag)](https://img.shields.io/docker/v/yobasystems/alpine-prestashop/armhf.svg?style=for-the-badge)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yobasystems/alpine-prestashop/armhf.svg?style=for-the-badge)
 
 
@@ -186,7 +183,6 @@ mysql:
 
 * [Github - yobasystems/alpine-prestashop](https://github.com/yobasystems/alpine-prestashop)
 * [Gitlab - yobasystems/alpine-prestashop](https://gitlab.com/yobasystems/alpine-prestashop)
-* [Bitbucket - yobasystems/alpine-prestashop](https://bitbucket.org/yobasystems/alpine-prestashop/)
 
 
 ## 🐳 Container Registries

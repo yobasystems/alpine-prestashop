@@ -1,10 +1,3 @@
-# You can override the included template(s) by including variable overrides
-# SAST customization: https://docs.gitlab.com/ee/user/application_security/sast/#customizing-the-sast-settings
-# Secret Detection customization: https://docs.gitlab.com/ee/user/application_security/secret_detection/#customizing-settings
-# Dependency Scanning customization: https://docs.gitlab.com/ee/user/application_security/dependency_scanning/#customizing-the-dependency-scanning-settings
-# Container Scanning customization: https://docs.gitlab.com/ee/user/application_security/container_scanning/#customizing-the-container-scanning-settings
-# Note that environment variables can be set in several places
-# See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
 stages:
 - build
 - test
@@ -13,8 +6,8 @@ stages:
 
 include:
 - remote: https://gitlab.com/yobasystems/gitlab-ci-templates/raw/master/container_scanning_all_arch.yml
-- template: Security/Secret-Detection.gitlab-ci.yml
-- template: Security/SAST.gitlab-ci.yml
+- template: Jobs/Secret-Detection.gitlab-ci.yml
+- template: Jobs/SAST.gitlab-ci.yml
 
 .build_template: &build_definition
   image: yobasystems/alpine-docker:dind
@@ -33,7 +26,7 @@ include:
     - echo "$CI_JOB_TOKEN" | docker login -u gitlab-ci-token "$CI_REGISTRY" --password-stdin
     - docker push ${CI_REGISTRY_IMAGE}/${CI_COMMIT_SHORT_SHA}:${ARCH}
 
-amd64 prestashop build:
+amd64_prestashop_build:
   <<: *build_definition
   tags:
     - amd64
@@ -41,7 +34,7 @@ amd64 prestashop build:
     ARCH: amd64
     PLATFORM: amd64
 
-arm32v7 prestashop build:
+arm32v7_prestashop_build:
   <<: *build_definition
   tags:
     - armhf
@@ -49,7 +42,7 @@ arm32v7 prestashop build:
     ARCH: armhf
     PLATFORM: arm/v7
 
-arm64v8 prestashop build:
+arm64v8_prestashop_build:
   <<: *build_definition
   tags:
     - aarch64
@@ -57,8 +50,36 @@ arm64v8 prestashop build:
     ARCH: aarch64
     PLATFORM: arm64/v8
 
-sast:
-  stage: test
+container_scanning_amd64:
+  tags:
+    - amd64
+  variables:
+    CS_DOCKERFILE_PATH: "alpine-prestashop-amd64/Dockerfile"
+
+container_scanning_armhf:
+  tags:
+    - aarch64 # Use aarch64 runner as there isnt an image for armhf
+  variables:
+    CS_DOCKERFILE_PATH: "alpine-prestashop-armhf/Dockerfile"
+
+container_scanning_aarch64:
+  tags:
+    - aarch64
+  variables:
+    CS_DOCKERFILE_PATH: "alpine-prestashop-aarch64/Dockerfile"
+
+sbom_amd64:
+  tags:
+    - amd64
+
+sbom_armhf:
+  tags:
+    - armhf
+
+sbom_aarch64:
+  tags:
+    - aarch64
+
 .deploy_template: &deploy_definition
   image: yobasystems/alpine-docker:dind
   stage: deploy
@@ -107,7 +128,7 @@ sast:
         docker push ghcr.io/$DOCKER_REGISTRY_GHCR_REPO:${CI_COMMIT_TAG}-${ARCH2}
       fi
 
-amd64 prestashop deploy:
+amd64_prestashop_deploy:
   <<: *deploy_definition
   tags:
     - amd64
@@ -116,9 +137,11 @@ amd64 prestashop deploy:
     ARCH2: x86_64
     PLATFORM: amd64
   needs:
-    - amd64 prestashop build
+    - amd64_prestashop_build
+    - container_scanning_amd64
+    - sbom_amd64
 
-arm32v7 prestashop deploy:
+arm32v7_prestashop_deploy:
   <<: *deploy_definition
   tags:
     - armhf
@@ -127,9 +150,11 @@ arm32v7 prestashop deploy:
     ARCH2: arm32v7
     PLATFORM: arm/v7
   needs:
-    - arm32v7 prestashop build
+    - arm32v7_prestashop_build
+    - container_scanning_armhf
+    - sbom_armhf
 
-arm64v8 prestashop deploy:
+arm64v8_prestashop_deploy:
   <<: *deploy_definition
   tags:
     - aarch64
@@ -138,15 +163,17 @@ arm64v8 prestashop deploy:
     ARCH2: arm64v8
     PLATFORM: arm64/v8
   needs:
-    - arm64v8 prestashop build
+    - arm64v8_prestashop_build
+    - container_scanning_aarch64
+    - sbom_aarch64
 
-manifest creation latest:
+manifest_creation_latest:
   image: yobasystems/alpine-docker:dind
   stage: manifest
   needs:
-    - amd64 prestashop deploy
-    - arm32v7 prestashop deploy
-    - arm64v8 prestashop deploy
+    - amd64_prestashop_deploy
+    - arm32v7_prestashop_deploy
+    - arm64v8_prestashop_deploy
   rules:
     - if: $CI_COMMIT_TAG
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
@@ -175,11 +202,11 @@ manifest creation latest:
         create_and_push_manifest $repo latest
       done
 
-manifest creation version:
+manifest_creation_version:
   image: yobasystems/alpine-docker:dind
   stage: manifest
   needs:
-    - manifest creation latest
+    - manifest_creation_latest
   rules:
     - if: $CI_COMMIT_TAG
   script:
