@@ -39,7 +39,7 @@ if [ "$PS_INSTALL_GIT" = "1" ]; then
   echo "${SSH_PRIVATE_KEY}" | tr -d '\r' > ~/.ssh/id_rsa
   chmod 600 ~/.ssh/id_rsa
   #clone repo with passwordless auth
-  git clone --depth=1 --branch=master ${REPO} /usr/html
+  git clone --depth=1 --branch=main ${REPO} /usr/html
   rm -rf /usr/html/.git
 else
   echo "[i] Pretashop already installed...";

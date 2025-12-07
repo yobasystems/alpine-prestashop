@@ -19,6 +19,19 @@ This Container image [(yobasystems/alpine-prestashop)](https://hub.docker.com/r/
 
 ---
 
+## Table of Contents
+
+- [What is Alpine Linux?](#what-is-alpine-linux)
+- [Features](#features)
+- [Architectures](#architectures)
+- [Tags](#tags)
+- [Layers & Sizes](#layers--sizes)
+- [How to use this image](#how-to-use-this-image)
+- [Image contents & Vulnerability analysis](#image-contents--vulnerability-analysis)
+- [Source Repositories](#source-repositories)
+- [Container Registries](#container-registries)
+- [Links](#links)
+
 ## What is Alpine Linux?
 
 Alpine Linux is a Linux distribution built around musl libc and BusyBox. The image is only 5 MB in size and has access to a package repository that is much more complete than other BusyBox based images. This makes Alpine Linux a great image base for utilities and even production applications. Read more about Alpine Linux here and you can see how their mantra fits in right at home with Container images.
@@ -38,7 +51,6 @@ PrestaShop is an efficient and innovative e-commerce solution with all the featu
 - `:arm64v8`, `:aarch64` - 64 bit ARM (ARMv8/aarch64)
 - `:arm32v7`, `:armhf` - 32 bit ARM (ARMv7/armhf)
 
-##### PLEASE CHECK TAGS BELOW FOR SUPPORTED ARCHITECTURES, THE ABOVE IS A LIST OF EXPLANATION
 
 ## Tags
 
@@ -96,16 +108,16 @@ php_flag[display_errors] = on
 
 #### List of available modules in Alpine Linux, not all these are installed.
 
-##### In order to install a php module do, (leave out the version number i.e. -5.6.11-r0
+##### In order to install a php module do, (leave out the version number i.e. -5.6.11-r0)
 
-```
+```bash
 docker exec <image_id> apk add <pkg_name>
 docker restart <image_name>
 ```
 
 Example:
 
-```
+```bash 
 docker exec <image_id> apk add php84-soap
 docker restart <image_name>
 ```
@@ -180,27 +192,27 @@ php84-mysqlnd
 
 ```yaml
 prestashop:
-  image: yobasystems/alpine-prestashop
+  image: yobasystems/alpine-prestashop:latest
   environment:
-    VIRTUAL_HOST: example.co.uk
+    VIRTUAL_HOST: example.com
     MYSQL_DATABASE: prestadb
-    MYSQL_PASSWORD: prestapass
-    MYSQL_ROOT_PASSWORD: ''
-    MYSQL_USER: prestauser
+    MYSQL_PASSWORD: 'changeme!'
+    MYSQL_ROOT_PASSWORD: 'changeme!'
+    MYSQL_USER: prestashop
   expose:
     - "80"
   volumes:
-    - /data/example/www:/usr/html
+    - /data/example-com/www:/usr/html
   restart: always
   links:
-    - mysql:mysql
-mysql:
+    - mariadb:mariadb
+mariadb:
   environment:
-    MYSQL_DATABASE: prestadb
-    MYSQL_PASSWORD: prestapass
-    MYSQL_ROOT_PASSWORD: ''
-    MYSQL_USER: prestauser
-  image: yobasystems/alpine-prestashop
+    MARIADB_DATABASE: prestadb
+    MARIADB_PASSWORD: 'changeme!'
+    MARIADB_ROOT_PASSWORD: 'changeme!'
+    MARIADB_USER: prestashop
+  image: yobasystems/alpine-mariadb:latest
 ```
 
 ## 📚 Source Repositories
